@@ -1,0 +1,8 @@
+read val
+for i in $(seq 1 $val);
+do
+read int[i]
+sum=$((sum+int[i]))
+done
+#avg=$((sum/val))
+printf "%.3f" $(echo "scale=4; $sum/$val" | bc -l)
